@@ -17,5 +17,15 @@ if (navigator.serviceWorker) {
  * This function displays an alert.
  */
 function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
+  var number = parseFloat(document.getElementById("number-input").value)
+  var sum = 0
+  var counter = 0
+  var loop = 0
+
+  for (let loop = 0; loop < number; ) {
+    loop++
+    sum = sum * (sum - 1)
+    document.getElementById("hello-world").innerHTML =
+      "You get " + sum + ".<br>"
+  }
 }
