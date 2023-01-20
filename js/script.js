@@ -8,8 +8,8 @@
  * Check servie worker.
  */
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2O-Template-PWA/sw.js", {
-    scope: "/ICS2O-Template-PWA/",
+  navigator.serviceWorker.register("/ICS2O-Assignment-05-JS/sw.js", {
+    scope: "/ICS2O-Assignment-05-JS/",
   })
 }
 
@@ -18,14 +18,15 @@ if (navigator.serviceWorker) {
  */
 function myButtonClicked() {
   var number = parseFloat(document.getElementById("number-input").value)
-  var sum = 0
-  var counter = 0
-  var loop = 0
+  var sum = 1
 
-  for (let loop = 0; loop < number; ) {
-    loop++
-    sum = sum * (sum - 1)
+  for (let loop = 1; loop <= number; loop++) {
+    sum *= loop
     document.getElementById("hello-world").innerHTML =
       "You get " + sum + ".<br>"
+  }
+  if (number == 0) {
+    document.getElementById("hello-world").innerHTML =
+      "You get 1"
   }
 }
